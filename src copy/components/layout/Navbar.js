@@ -21,10 +21,13 @@ function MainNavigation() {
             <Link to="/edit">Edit Page</Link>
           </li>
           <li>
+            <Link to="/web-preview">Contact Us</Link>
+          </li>
+          <li>
             <Link to="/allpages">All Pages</Link>
           </li>
           <li>
-            <Link to="/updatephone">Update Phone Number</Link>
+            <Link to="/contact">Contact Us</Link>
           </li>
         </ul>
       </nav>
