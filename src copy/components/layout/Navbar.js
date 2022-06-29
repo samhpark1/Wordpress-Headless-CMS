@@ -21,7 +21,7 @@ function MainNavigation() {
             <Link to="/edit">Edit Page</Link>
           </li>
           <li>
-            <Link to="/web-preview">Contact Us</Link>
+            <Link to="/web-preview">Website Preview</Link>
           </li>
           <li>
             <Link to="/allpages">All Pages</Link>
