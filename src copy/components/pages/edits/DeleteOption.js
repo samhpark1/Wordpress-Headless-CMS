@@ -24,6 +24,9 @@ const DeleteOption = (props) => {
                 },
             }
         )
+
+        console.log('working');
+        props.onFinish();
     }
 
 
@@ -32,8 +35,7 @@ const DeleteOption = (props) => {
     });
 
     return (
-        <div>
-            <h2>Delete {props.type}</h2>
+        <div className='modal'>
             <section>
                 <form onSubmit={changeHandler}>
                     <select name='choice' ref={choiceInputRef}>
