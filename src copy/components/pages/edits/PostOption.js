@@ -1,7 +1,7 @@
 import {useRef} from 'react';
 import SiteInfo from "../../layout/SiteInfo";
 
-const PostOption=()=>{
+const PostOption=(props)=>{
     const titleInputRef = useRef();
     const contentInputRef = useRef();
     const typeInputRef = useRef();
@@ -29,34 +29,38 @@ const PostOption=()=>{
                     'Authorization': 'Basic ' + btoa(`${SiteInfo.username}:${SiteInfo.password}`),
                 },
             }
-        ).then(pages => pages.json()).then(json => console.log(json));
+        ).then(pages => pages.json())
+
+        props.onFinish();
     }
 
     return(
-        <section>
-            <form onSubmit={addNewHandler}>
-                <h3>Add a Page or Post to your website</h3>
-                <ul>
-                    <li>
-                        <select name="type" ref={typeInputRef}>
-                            <option value="posts">Post</option>
-                            <option value="pages">Page</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label htmlFor='title'>Title</label>
-                        <input type='text' required id='title' ref={titleInputRef}/>
-                    </li>
-                    <li>
-                        <label htmlFor='content'>Content</label>
-                        <textarea id = 'content' required rows='5' ref={contentInputRef}/>
-                    </li>
-                    <li>
-                        <button>Publish</button>
-                    </li>
-                </ul>
-            </form>
-        </section>
+        <div className='modal'>
+            <section>
+                <form onSubmit={addNewHandler}>
+                    <ul>
+                        <li>
+                            <select name="type" ref={typeInputRef}>
+                                <option value="posts">Post</option>
+                                <option value="pages">Page</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label htmlFor='title'>Title</label>
+                            <input type='text' required id='title' ref={titleInputRef}/>
+                        </li>
+                        <li>
+                            <label htmlFor='content'>Content</label>
+                            <textarea id = 'content' required rows='5' ref={contentInputRef}/>
+                        </li>
+                        <li>
+                            <button>Publish</button>
+                        </li>
+                    </ul>
+                </form>
+            </section>
+        </div>
+
     )
 }
 
