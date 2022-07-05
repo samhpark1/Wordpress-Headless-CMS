@@ -38,14 +38,12 @@ const PutOption = (props) => {
                 },
             }
         )
+
+        props.onFinish();
     }
 
-
-
-
     return (
-        <div>
-            <h2>Edit {props.type}</h2>
+        <div className='modal'>
             <section>
                 <form onSubmit={changeHandler}>
                     <ul>
