@@ -18,6 +18,7 @@ const WebPreviewPage= ()=>{
         <div>
             {allPages.map((page) => (
                 <div key={page.id} className="page">
+                    <h2 dangerouslySetInnerHTML={{ __html: page.title.rendered }} />
                     <p dangerouslySetInnerHTML={{ __html: page.content.rendered }} />
                 </div>
 
