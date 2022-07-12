@@ -1,11 +1,27 @@
+import SiteInfo from "../layout/SiteInfo";
+import React, { useEffect, useState} from "react";
 
 const WebPreviewPage= ()=>{
+    const [allPages, setPages] = useState([]);
+
+    const fetchPages = () => {
+        fetch(SiteInfo.sitelink + "/wp-json/wp/v2/pages")
+            .then((pages) => pages.json())
+            .then((json) => setPages(json));
+    };
+
+    useEffect(() => {
+        fetchPages();
+    }, []);
+
     return(
         <div>
-            <section>
-                <h1>Preview Your Website Changes</h1>
-                <p1>Visually double-check, review, and publish changes that you want to make to your website</p1>
-            </section>
+            {allPages.map((page) => (
+                <div key={page.id} className="page">
+                    <p dangerouslySetInnerHTML={{ __html: page.content.rendered }} />
+                </div>
+
+            ))}
         </div>
     )
 }
