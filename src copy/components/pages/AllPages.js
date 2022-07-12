@@ -1,5 +1,6 @@
 import SiteInfo from "../layout/SiteInfo";
 import { useEffect, useState } from "react";
+import classes from "./AllPages.modules.css"
 const AllPages = () => {
   const [allPages, setPages] = useState([]);
 
@@ -21,7 +22,7 @@ const AllPages = () => {
       </section>
       <hr />
       <section>
-        <table>
+        <table class="center">
           <thead>
             <tr>
               <th>Page Name</th>
