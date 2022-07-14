@@ -1,5 +1,7 @@
 # Wordpress-Headless-CMS
 
+AUTHORS: Samuel Park and Aadi Lahiri
+
 Install Wordpress locally
 
   * For Mac: https://codex.wordpress.org/Installing_WordPress_Locally_on_Your_Mac_With_MAMP
